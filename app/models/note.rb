@@ -1,3 +1,3 @@
 class Note < ActiveRecord::Base
-  attr_accessible :Name, :StudentId
+  attr_accessible :name, :student_id
 end

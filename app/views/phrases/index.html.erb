@@ -10,11 +10,11 @@
   </tr>
 
 <% @phrases.each do |phrase| %>
-  <% if phrase.CategoryId == category.id then %>
+  <% if phrase.category_id == category.id then %>
   <tr>
-    <td><%= phrase.English.gsub("%s", "___") %></td>
-    <td><%= phrase.Spanish.gsub("%s", "___") %></td>
-    <td><%= phrase.Chinese.gsub("%s", "___") %></td>
+    <td><%= phrase.english.gsub("%s", "___") %></td>
+    <td><%= phrase.spanish.gsub("%s", "___") %></td>
+    <td><%= phrase.chinese.gsub("%s", "___") %></td>
     <td><%= link_to 'Show', phrase %></td>
     <td><%= link_to 'Edit', edit_phrase_path(phrase) %></td>
   </tr>

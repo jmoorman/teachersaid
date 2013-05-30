@@ -1,3 +1,3 @@
 class NotePhrase < ActiveRecord::Base
-  attr_accessible :NoteId, :PhraseId, :Position
+  attr_accessible :note_id, :phrase_id, :position
 end

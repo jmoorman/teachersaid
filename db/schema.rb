@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130529212449) do
+ActiveRecord::Schema.define(:version => 20130530174309) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -20,45 +20,48 @@ ActiveRecord::Schema.define(:version => 20130529212449) do
   end
 
   create_table "note_phrases", :force => true do |t|
-    t.integer  "NoteId"
-    t.integer  "PhraseId"
-    t.integer  "Position"
+    t.integer  "note_id"
+    t.integer  "phrase_id"
+    t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "notes", :force => true do |t|
-    t.string   "Name"
-    t.integer  "StudentId"
+    t.string   "name"
+    t.integer  "student_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "phrases", :force => true do |t|
-    t.integer  "CategoryId"
-    t.string   "English"
-    t.string   "Spanish"
-    t.string   "Chinese"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "category_id"
+    t.string   "english"
+    t.string   "spanish"
+    t.string   "chinese"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "students", :force => true do |t|
-    t.string   "FirstName"
-    t.string   "LastName"
-    t.string   "Language"
-    t.integer  "TeacherId"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "language"
+    t.integer  "teacher_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "teachers", :force => true do |t|
     t.string   "prefix"
-    t.string   "firstname"
-    t.string   "lastname"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "password_digest"
   end
+
+  add_index "teachers", ["email"], :name => "index_teachers_on_email", :unique => true
 
 end

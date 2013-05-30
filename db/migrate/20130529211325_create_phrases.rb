@@ -1,10 +1,10 @@
 class CreatePhrases < ActiveRecord::Migration
   def change
     create_table :phrases do |t|
-      t.integer :CategoryId
-      t.string :English
-      t.string :Spanish
-      t.string :Chinese
+      t.integer :category_id
+      t.string :english
+      t.string :spanish
+      t.string :chinese
 
       t.timestamps
     end

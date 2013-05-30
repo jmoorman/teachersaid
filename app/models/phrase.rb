@@ -1,3 +1,3 @@
 class Phrase < ActiveRecord::Base
-  attr_accessible :CategoryId, :Chinese, :English, :Spanish
+  attr_accessible :category_id, :chinese, :english, :spanish
 end
