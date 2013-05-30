@@ -1,4 +1,6 @@
 #Seed the database
+Phrase.delete_all
+Category.delete_all
 
 category = Category.create(name: %Q^Kindergarten/First Grade^);
 Phrase.create(category_id: category.id, english: %Q^%s is enthusiastic about learning new topics. He/she enjoys working with Center activities. However, %s needs to gain more self-control.^, spanish: %Q^%s esta entusiamado en aprender sobre nuevos temas. el/Ella disfruta trabajar con los Centros de actividades. Sin embargo, %s necesita obtener mas control de si mismo.^, chinese: %Q^%s熱心学习新題目。他/她享受中心活动。无论如何,%s需要培养自我控制能力。^)
