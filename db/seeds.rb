@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 #Seed the database
 Phrase.delete_all
 Category.delete_all
