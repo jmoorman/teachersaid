@@ -2,23 +2,16 @@ Teachersaid::Application.routes.draw do
   root to: 'static_pages#home'
 
   resources :note_phrases
-
-
   resources :notes
-
-
   resources :students
-
-
   resources :teachers
-
-
   resources :phrases
-
-
   resources :categories
+   resources :sessions, only: [:new, :create, :destroy]
 
    match '/signup', to: 'teachers#new'
+   match '/signin', to: 'sessions#new'
+   match '/signout', to: 'sessions#destroy', via: :delete
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -3,6 +3,7 @@ class Teacher < ActiveRecord::Base
    has_secure_password
 
    before_save { |teacher| teacher.email = email.downcase }
+   before_save :create_remember_token
 
    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
    validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
@@ -14,4 +15,9 @@ class Teacher < ActiveRecord::Base
    validates :password_confirmation, presence: true
 
    after_validation { self.errors.messages.delete(:password_digest) }
+
+   private
+      def create_remember_token
+         self.remember_token = SecureRandom.urlsafe_base64
+      end
 end
