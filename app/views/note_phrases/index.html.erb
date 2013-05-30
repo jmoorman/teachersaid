@@ -1,0 +1,27 @@
+<h1>Listing note_phrases</h1>
+
+<table>
+  <tr>
+    <th>Noteid</th>
+    <th>Phraseid</th>
+    <th>Position</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @note_phrases.each do |note_phrase| %>
+  <tr>
+    <td><%= note_phrase.NoteId %></td>
+    <td><%= note_phrase.PhraseId %></td>
+    <td><%= note_phrase.Position %></td>
+    <td><%= link_to 'Show', note_phrase %></td>
+    <td><%= link_to 'Edit', edit_note_phrase_path(note_phrase) %></td>
+    <td><%= link_to 'Destroy', note_phrase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Note phrase', new_note_phrase_path %>

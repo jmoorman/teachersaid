@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @category.name %></h1>
+
+<table border=1>
+  <tr>
+    <th>English</th>
+    <th>Spanish</th>
+    <th>Chinese</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @phrases.each do |phrase| %>
+  <tr>
+    <td><%= phrase.English.gsub("%s", "___") %></td>
+    <td><%= phrase.Spanish.gsub("%s", "___") %></td>
+    <td><%= phrase.Chinese.gsub("%s", "___") %></td>
+    <td><%= link_to 'Show', phrase %></td>
+    <td><%= link_to 'Edit', edit_phrase_path(phrase) %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

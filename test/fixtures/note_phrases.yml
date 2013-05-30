@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  NoteId: 1
+  PhraseId: 1
+  Position: 1
+
+two:
+  NoteId: 1
+  PhraseId: 1
+  Position: 1

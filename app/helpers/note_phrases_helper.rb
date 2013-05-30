@@ -1,0 +1,2 @@
+module NotePhrasesHelper
+end

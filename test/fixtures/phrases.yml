@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  CategoryId: 1
+  English: MyString
+  Spanish: MyString
+  Chinese: MyString
+
+two:
+  CategoryId: 1
+  English: MyString
+  Spanish: MyString
+  Chinese: MyString

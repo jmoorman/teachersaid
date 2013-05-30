@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Noteid:</b>
+  <%= @note_phrase.NoteId %>
+</p>
+
+<p>
+  <b>Phraseid:</b>
+  <%= @note_phrase.PhraseId %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @note_phrase.Position %>
+</p>
+
+
+<%= link_to 'Edit', edit_note_phrase_path(@note_phrase) %> |
+<%= link_to 'Back', note_phrases_path %>

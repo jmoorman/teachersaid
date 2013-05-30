@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>English:</b>
+  <%= @phrase.English.gsub("%s", "___") %>
+</p>
+
+<p>
+  <b>Spanish:</b>
+  <%= @phrase.Spanish.gsub("%s", "___") %>
+</p>
+
+<p>
+  <b>Chinese:</b>
+  <%= @phrase.Chinese.gsub("%s", "___") %>
+</p>
+
+
+<%= link_to 'Edit', edit_phrase_path(@phrase) %> |
+<%= link_to 'Back', phrases_path %>

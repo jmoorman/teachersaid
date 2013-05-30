@@ -1,0 +1,27 @@
+<% @categories.each do |category| %>
+<h2><%= category.name %></h2>
+<table border=1>
+  <tr>
+    <th>English</th>
+    <th>Spanish</th>
+    <th>Chinese</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @phrases.each do |phrase| %>
+  <% if phrase.CategoryId == category.id then %>
+  <tr>
+    <td><%= phrase.English.gsub("%s", "___") %></td>
+    <td><%= phrase.Spanish.gsub("%s", "___") %></td>
+    <td><%= phrase.Chinese.gsub("%s", "___") %></td>
+    <td><%= link_to 'Show', phrase %></td>
+    <td><%= link_to 'Edit', edit_phrase_path(phrase) %></td>
+  </tr>
+  <% end %>
+<% end %>
+</table>
+<% end %>
+<br />
+
+<%= link_to 'New Phrase', new_phrase_path %>
