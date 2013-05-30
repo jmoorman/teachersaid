@@ -44,7 +44,8 @@ class TeachersController < ApplicationController
 
     respond_to do |format|
       if @teacher.save
-        format.html { redirect_to @teacher, notice: 'Teacher was successfully created.' }
+        flash[:success] = "Welcome, #{@teacher.prefix} #{@teacher.last_name}!"
+        format.html { redirect_to @teacher }
         format.json { render json: @teacher, status: :created, location: @teacher }
       else
         format.html { render action: "new" }

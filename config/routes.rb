@@ -16,6 +16,7 @@ Teachersaid::Application.routes.draw do
 
   resources :categories
 
+   match '/signup', to: 'teachers#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
